@@ -1,0 +1,33 @@
+.__login_form{
+    .ui.label{
+        margin-bottom: 2px;
+    }
+
+    .ui.input {
+        input {
+            font-size: 16px !important;
+        }
+    }
+
+    .active {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        
+        .sub-active{
+            align-items: center;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            .ui.button {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .ui.button.submit{
+        background-color: $primary;
+        color: $font-light;
+    }
+}

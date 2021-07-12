@@ -1,0 +1,27 @@
+//colors
+@import './base/colors';
+
+//General Layout
+@import './basicLayout';
+
+//Header
+@import './components/header';
+@import './components/modal';
+@import './components/auth';
+
+//Body
+@import './account';
+@import './components/user';
+@import './index';
+@import './components/products';
+@import './components/search';
+@import './components/cart';
+@import './components/orders';
+@import './components/footer';
+@import './components/about';
+@import './components/categories';
+@import './components/contact';
+@import './components/terms';
+
+
+@import "~bootstrap/scss/bootstrap";

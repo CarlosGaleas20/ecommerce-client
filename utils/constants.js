@@ -1,0 +1,2 @@
+export const BASE_URL = "https://ecommerce-tesis20.herokuapp.com";
+export const STRIPE_TOKEN = "pk_test_51IsWlyHBtJlLFwb0djABVfLaqSG2LsZkLsbxMvGTEFmSB3H6C7ICj8sNtaQRoz8HQE1QbmXSVTNc4TWGdoTwsBsy00xwzn0833";

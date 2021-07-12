@@ -1,0 +1,132 @@
+.__header_container {
+    box-shadow: 0 -10px 10px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+    -webkit-box-shadow: 0 -10px 10px 15px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 -10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.__header_top-bar {
+    background-color: $background-dark;
+    height: 135px;
+
+    .ui-grid {
+        margin: 0;
+        padding: 0;
+
+        .colum {
+            padding: 0;
+        }
+    }
+
+    .top-bar__left {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+
+        img {
+            height: 100px;
+            transition: all .3s ease;
+
+            &:hover{
+                transform: translateX(-15px);
+            }
+        }
+    }
+
+    .top-bar__right {
+        align-items: center;
+        display: flex !important;
+        justify-content: flex-end;
+
+    }
+}
+
+.__header_menu {
+    background-color: $background-grey-dark;
+    border-radius: 0;
+    height: 42px;
+    
+    .ui-grid {
+        margin: 0;
+    }
+
+    &_left {
+        .ui.menu {
+            .item {
+                border-right: 1px solid $font-light;
+            }
+
+            .item:first-child {
+                border-left: 1px solid $font-light;
+            }
+        }
+    }
+
+    &_left, &_right {
+        align-items: center !important;
+        display: flex !important;
+        padding: 0 !important;
+
+        .ui.menu {
+            display: flex;
+            align-items: center;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            height: 100%;
+
+            .icon {
+                color: $primary;
+                margin-right: 10px !important;
+            }
+
+            .item {
+                border-radius: 5px;
+                color: $font-light;
+                transition: all .3s ease;
+                &:hover {
+                    background-color: $background-dark-absolute;
+                    color: $font-light;
+                    &::before {
+                        background-color: $background-dark-absolute;
+                    }
+                    border-bottom: 1px solid white;
+
+                }
+            }
+
+            .dropdown-menu {
+                background-color: $background-grey-dark;
+                z-index: 100 !important;
+
+                a {
+                    width: 100% !important;
+                    height: 100% !important;
+                    
+                }
+
+                .dropdown-item {
+                    margin: 0 !important;
+                    padding: 0 !important;
+
+                    .item {
+                        padding: 20px 30px !important; 
+                    }
+
+                    a {
+                        .item {
+                            padding: 20px 30px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &_right {
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+}

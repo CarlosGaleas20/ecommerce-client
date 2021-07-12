@@ -1,0 +1,25 @@
+.__account_body {
+    .__account_configurartion {
+        padding: 10px;
+        position: relative;
+    }
+
+    .__account_tittle-container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .__account_tittle {
+        background-color: $background-dark-absolute;
+        border-radius: 5px 5px 0 0;
+        color: $font-light;
+        padding: 5px 10px;
+        width: max-content;
+    }
+
+    .__account_data {
+        background-color: $background-grey-light !important;
+    }
+}

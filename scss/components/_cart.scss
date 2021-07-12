@@ -1,0 +1,136 @@
+.__cart {
+
+    ._data-not-found {
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+    &_summary {
+        padding: 10px;
+
+        .title {
+            background-color: $background-dark-absolute;
+            border-radius: 5px 5px 0 0;
+            color: $font-light;
+            padding: 5px 10px;
+            width: max-content;
+        }
+
+        .data {
+            background-color: $background-light;
+            box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+
+        &-product {
+            td {
+                text-align: center !important;
+
+                &:first-of-type {
+                    align-items: center;
+                    display: flex !important;
+
+                    img {
+                        height: 100px;
+                        padding-right: 20px;
+                    }
+                }
+
+                .ui.button {
+                    margin: 0 10px;
+                }
+            }
+        }
+
+        &-resume {
+            td {
+                &:last-of-type {
+                    text-align: center !important;
+                }
+            }
+
+            .total-price {
+                color: $primary;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            .clear {
+                border-bottom: 1px solid $border-light;
+                border-left: 1px solid $border-light;
+            }
+        }
+    }
+
+    &_addresses {
+        padding: 10px;
+
+        .title {
+            background-color: $background-dark-absolute;
+            border-radius: 5px 5px 0 0;
+            color: $font-light;
+            padding: 5px 10px;
+            width: max-content;
+        }
+
+        .terms {
+            margin-top: 15px;
+            h3 {
+                color: $primary;
+            }
+        }
+
+        .data {
+            background-color: $background-light;
+            box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+
+        .address {
+            border-radius: 5px;
+            border: 1px solid $border-grey-light;
+            margin: 10px 0;
+            padding: 10px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            p {
+                margin-bottom: 5px;
+
+                &:first-of-type{
+                    border-bottom: 1px solid $border-grey-light;
+                    color: $primary;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    opacity: 0.6;
+                }
+            }
+
+            &.active {
+                border-color: $primary;
+                background-color: #ffe2d4;
+                p {
+                    border-color: $primary;
+                }
+            }
+        }
+
+        .terminos {
+            margin-top: 15px;
+
+            .ui {
+                label {
+                    font-size: 16px;
+                }
+            }
+
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+
+}
