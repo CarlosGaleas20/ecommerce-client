@@ -244,3 +244,27 @@ export const checkToken = (token) => {
     }
     return false;
 }
+
+export const getUserById = async (idUser, logout) => {
+    try {
+        const url = `${BASE_URL}/users?_id=${idUser}`;
+        const result = await authFetch(url, null, logout);
+        return result ? result : null;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+}
+
+export const getUserAddressById = async (idAddress, logout) => {
+    try {
+        const url = `${BASE_URL}/direcciones?_id=${idAddress}`;
+
+        const result = await authFetch(url, null, logout);
+        return result;
+
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+}

@@ -9,7 +9,6 @@ const CartBody = ({products, reload, setReload, productsData}) => {
     const [address, setAddress] = useState(null);
     const [terminos, setTerminos] = useState(false);
     const [addressLocal, setAddressLocal] = useState(false);
-    console.log(address);
 
     return (
         <div>

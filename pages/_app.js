@@ -54,8 +54,10 @@ function MyApp({ Component, pageProps }) {
     if(auth) {
       const response = await countProductsCartApi(auth.idUser)
       setProductsCart(response);
-      setReloadCart(false);
+    } else{
+      setProductsCart(0);
     }
+    setReloadCart(false);
   }, [reloadCart, auth])
 
 

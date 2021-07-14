@@ -6,13 +6,15 @@ import useAuth from '../../hooks/useAuth';
 import { paymentByDeposit, removeAllProductCartApi } from '../../api/cart';
 import useCart from '../../hooks/useCart';
 import { updateAmountProductBySell } from '../../api/products';
-import { sendEmailShop } from '../../api/email';
+import { sendEmailShopDeposit } from '../../api/email';
+import moment from 'moment';
+import 'moment/locale/es';
 
 const FormPaymentDeposit = ({ products, address, setReload, productsData }) => {
 
     const [loading, setLoading] = useState(false);
     const { auth, logout } = useAuth();
-    const { setReloadCart, setProductsCart } = useCart();
+    const { setProductsCart } = useCart();
     const router = useRouter();
     const crypto = require("crypto");
 
@@ -30,19 +32,28 @@ const FormPaymentDeposit = ({ products, address, setReload, productsData }) => {
                 logout
             );
             if (response) {
+                const fecha = moment().format(' Do MMMM YYYY');
+                const prueba = await sendEmailShopDeposit(
+                    idPedido,
+                    productsData,
+                    auth.idUser,
+                    address.id,
+                    fecha,
+                    logout
+                )
+                console.log(prueba);
                 toast.success('Pedido realizado');
                 removeAllProductCartApi(auth.idUser, products, logout);
                 updateAmountProductBySell(productsData, logout);
-                setReloadCart(true);
                 setReload(true);
-                setProductsCart(0);
                 router.push('/orders');
             } else {
-                toast.error('Error al realziar el pedido');
+                toast.error('Error al realizar el pedido');
             }
         } catch (error) {
-            
+            console.log(error);
         }
+        setProductsCart(0);
         setLoading(false);
     }
 
