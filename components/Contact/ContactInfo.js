@@ -1,18 +1,8 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
-import { sendEmailShop } from '../../api/email';
 
 const ContactInfo = ({info}) => {
 
     const { email, telefono, direccion, horarioApertura } = info;
-
-    const handleSend = async() => {
-        const data ={
-            mensaje: 'Ahora si sirve XD',
-        }
-        const response = await sendEmailShop(data);
-        console.log(response);
-    }
 
     return (
         <>
@@ -26,11 +16,6 @@ const ContactInfo = ({info}) => {
             <p>{direccion}</p>
             <p className="description">Horario de atención:</p>
             <p>{horarioApertura}</p>
-            <Button
-                onClick={handleSend}
-            >
-                Enviar
-            </Button>
         </>
     )
 }

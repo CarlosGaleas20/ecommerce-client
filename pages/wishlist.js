@@ -7,6 +7,7 @@ import useAuth from '../hooks/useAuth';
 import { getFavoriteProduct } from '../api/favorites';
 import ListProductsByCategory from '../components/Products/ListProductsByCategory';
 import { useRouter } from 'next/router';
+import Seo from '../components/Seo';
 
 const WishList = () => {
 
@@ -40,12 +41,16 @@ const WishList = () => {
         }
     }, [])
 
+    const title = 'Tus favorítos - Señor de Maca';
+    const description = 'Tus productos favorítos';
+
     return (
         <>
             {
                 (auth && user)
                     ? (
                         <BasicLayout className="__products_favorites">
+                            <Seo title={title} description={description} />
                             <div className="__products_favorites-block">
                                 <div className="title">
                                     Lista de Favoritos

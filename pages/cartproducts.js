@@ -7,6 +7,7 @@ import useAuth from '../hooks/useAuth';
 import BasicLayout from '../layouts/BasicLayout/BasicLayout';
 import { size, forEach } from 'lodash';
 import { toast } from 'react-toastify';
+import Seo from '../components/Seo';
 
 
 export const Cartproducts = () => {
@@ -48,10 +49,14 @@ export const Cartproducts = () => {
         }
     }, [auth, reload])
 
+    const title = 'Tu carrito - Señor de Maca';
+    const description = 'Tu carrito de compras';
+
 
     return (
         <>
             <BasicLayout className="__cart">
+            <Seo title={title} description={description} />
                 <div className="data">
                     {!products && <Loader active>Cargando Carrito</Loader>}
                     {products && size(products) === 0

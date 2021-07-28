@@ -6,6 +6,7 @@ import BasicLayout from '../layouts/BasicLayout/BasicLayout';
 import OrderBody from '../components/Orders/OrderBody';
 import { Loader } from 'semantic-ui-react';
 import { getInfoDeposit } from '../api/infoContact';
+import Seo from '../components/Seo';
 
 const Orders = () => {
 
@@ -72,8 +73,12 @@ const Orders = () => {
         })()
     }, [])
 
+    const title = 'Tus compras - Señor de Maca';
+    const description = 'Tus compras de productos realizadas';
+
     return (
         <BasicLayout className="__orders">
+            <Seo title={title} description={description} />
             <div className="__orders_block">
                 <div className="title">Compras</div>
                 <div className="data">

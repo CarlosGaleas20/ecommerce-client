@@ -5,6 +5,7 @@ import BasicLayout from '../layouts/BasicLayout/BasicLayout';
 import { searchProducts } from '../api/products';
 import { Loader } from 'semantic-ui-react';
 import ListProductsByCategory from '../components/Products/ListProductsByCategory';
+import Seo from '../components/Seo';
 
 const Search = () => {
 
@@ -25,11 +26,13 @@ const Search = () => {
         })()
     }, [query])
 
-
+    const title = 'Busquedas - Señor de Maca';
+    const description = 'Tus productos buscados';
 
     return (
         <>
             <BasicLayout className="__search">
+            <Seo title={title} description={description} />
                 {!products && <Loader active>Cargando Productos</Loader>}
                 {products && size(products) === 0
                     && (

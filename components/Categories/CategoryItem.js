@@ -8,7 +8,7 @@ const CategoryItem = ({category}) => {
 
     return (
         <>
-            <Grid.Column mobile={16} tablet={8} computer={5}>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
                 <Link href={`/products/${url}`}>
                     <a>
                         <Card className="container-item">

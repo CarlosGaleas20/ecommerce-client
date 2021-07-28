@@ -21,10 +21,13 @@ const ListProducts = () => {
     })()
   }, [])
 
+    const title = 'Productos - Señor de Maca';
+    const description = 'Nuestros Productos';
+
   return (
     <>
       <BasicLayout>
-        <Seo />
+      <Seo title={title} description={description} />
         <div className="__index_container" >
           {!products && <Loader active>Cargando Productos</Loader>}
           {products && size(products) === 0 

@@ -8,6 +8,7 @@ import UserEmail from '../components/User/UserEmail';
 import UserPass from '../components/User/UserPass';
 import useAuth from '../hooks/useAuth';
 import BasicLayout from '../layouts/BasicLayout/BasicLayout';
+import Seo from '../components/Seo';
 
 const Account = () => {
 
@@ -25,12 +26,16 @@ const Account = () => {
         return null;
     }, [auth])
 
+    const title = 'Tus datos - Señor de Maca';
+    const description = 'Tus datos de usuario';
+
     return (
         <>
             {
                 (auth && user)
                 ? (
                     <BasicLayout className="__account_body" >
+                        <Seo title={title} description={description} />
                         <div className="__account_configurartion">
                             <div className="__account_tittle">
                                 Configuración

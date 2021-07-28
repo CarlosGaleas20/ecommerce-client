@@ -20,7 +20,7 @@ const Contact = () => {
 
 
 
-    const title = 'Contactenos - Señor de Maca';
+    const title = 'Contáctenos - Señor de Maca';
     const description = 'Sobre Nosotros';
     return (
         <>

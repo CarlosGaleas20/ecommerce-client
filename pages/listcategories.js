@@ -19,7 +19,7 @@ const ListCategories = () => {
       }, [])
 
     const title = 'Productos - Señor de Maca';
-    const description = 'Sobre Nosotros';
+    const description = 'Nuestras Categorías';
 
 
     return (

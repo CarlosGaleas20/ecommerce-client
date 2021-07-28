@@ -7,6 +7,7 @@ import BasicLayout from '../../layouts/BasicLayout/BasicLayout';
 import ListProductsByCategory from '../../components/Products/ListProductsByCategory';
 import { getTotalProdcutsByCategory } from '../../api/categories';
 import ProductsPagination from '../../components/Pagination/ProductsPagination';
+import Seo from '../../components/Seo';
 
 
 const Category = () => {
@@ -15,6 +16,8 @@ const Category = () => {
     const { query } = useRouter();
     const [products, setProducts] = useState(null);
     const [totalProducts, setTotalProducts] = useState(null);
+    const [title, setTitle] = useState('Categorías - Señor de Maca');
+    const [description, setDescription] = useState('Tu Categorías');
 
     const getStartedItem = () => {
         const currentPage = parseInt(query.page);
@@ -31,6 +34,10 @@ const Category = () => {
                     getStartedItem()
                 );
                 setProducts(response);
+                if(size(response) > 0 ){
+                    setTitle(`${response[0].category.title} - Señor de Maca`);
+                    setDescription(`Los productos en la categoría: ${response[0].category.title}`)
+                }
             }
         })()
     }, [query])
@@ -46,6 +53,7 @@ const Category = () => {
     return (
         <BasicLayout>
             <div className="__index_container" >
+            <Seo title={title} description={description} />
                 {!products && <Loader active>Cargando Productos</Loader>}
                 {products && size(products) === 0
                     && (
